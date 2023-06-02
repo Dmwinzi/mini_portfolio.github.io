@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="/path/to/jquery.animateTyping.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <title>Mwinzi-Full Stack Developer</title>
+
+    <style>
+        header {
+  position: relative;
+  background-color: black;
+  height: 120vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: -1000;
+}
+
+img{
+    margin-top: 20px;
+}
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+}
+
+.rating>input {
+    display: none
+}
+
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 6vw;
+    color: #FFD600;
+    cursor: pointer
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+body {
+    background:white;
+    color:black;
+}
+
+h1,
+p {
+    text-align: center
+}
+
+p {
+    font-size: 1.2rem
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 14px
+    }
+
+    p {
+        font-size: 12px
+    }
+}
+#text{
+                width: 23ch;
+                animation: typing 4s steps(40),blink .5s step-end infinite alternate;
+                white-space: nowrap;
+                overflow: hidden;
+                border-right: 3px;
+                font-family: serif;
+                font-size: 2em;
+            
+             }
+             @keyframes typing{
+                 from{
+                     width: 0;
+                 }
+             } 
+
+             @keyframes blink{
+                 50%{
+                     border-color: transparent;
+                 }
+             }
+             #type{
+                 height: 100vh;
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+             }
+             #text{
+                 color: white;
+             }
+             #txt{
+                width: 26ch;
+                animation: typing 4s steps(40),blink .5s step-end infinite alternate;
+                white-space: nowrap;
+                overflow: hidden;
+                border-right: 3px ;
+                font-family: cursive;
+                
+             }
+             @keyframes typing{
+                 from{
+                     width: 0;
+                 }
+             } 
+
+             @keyframes blink{
+                 50%{
+                     border-color: transparent;
+                 }
+             }
+             #type{
+                 height: 100vh;
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+             }
+             #txt{
+                 color: white;
+                 
+             }
+
+.float {
+     position: fixed;
+    width: 40px;
+    height: 40px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 60px;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.service-block {
+    background: #151C22;
+    padding: 40px 25px;
+    margin: 15px 0;
+    border: 1px solid #202B33;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+}
+.service-icon {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+#like{
+  margin-left: 120px;
+}
+    </style>
+
+    <body>
+
+        <!--nav-->
+    <nav class="navbar sticky-top navbar-expand-md navbar-light">
+        <div class="container">
+        <a class="navbar-brand">Mwinzi</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto ">
+            <li class="nav-item">
+               <a class="nav-link" href="#page-top">Home</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#timeline">Timeline</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#service">Services</a>
+              </li>   
+              <li class="nav-item">
+                <a class="nav-link" href="#projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>    
+        </ul>
+        </div>
+        </div>
+    </nav>
+    
+    <!--home-->
+    <header id="page-top" class="mb-4" >
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+          <source src="vid.mp4" type="video/mp4">
+        </video>
+        <div class="container h-100">
+            <div class="container mb-2">
+            <img  class="rounded-circle" src="mwinzi.JPG" width="100" height="100">
+            <p class="d-inline-flex p-2 bd-highlight" style="color: white; font-size: 30px; font-family: cursive;">Developer</p>
+            </div>
+          <div class="h-40 text-center" style="margin-top: 70px;margin-left:10px;">
+            <div class="w-100  text-white" class="type">
+              <h1 class="display-1" style="font-size: 20px;" id="text">Daniel Mwinzi</h1>
+              <p class="lead mb-4" id="txt">I build value through coding....</p>
+            </div>
+          </div>
+          <div class="container-fluid " id="top">
+             <div class="text-center">
+                <p style="color: white;"><i style="color: gray;">Based in Nairobi Kenya</i>.I am passionate about building excellent software that improves the lives of
+                those around me.I specialize in creating software for clients ranging from individuals to
+            small businesses all the way to large enterprise and corporations.
+                what would you do if you had a software expert at your fingertips?</p>
+             </div>
+             <hr style="background-color:white; width: auto;">
+             <div class="container d-flex justify-content-center">
+                <div class="row" style="font-size:20px;">
+                   <div class="col-1"> <a href="https://github.com/danielmwinzi" class="fa fa-github"></a></div>
+                   <div class="col-1"> <a href="https://www.instagram.com/_.mwinzi/" class="fa fa-instagram"></a></div>
+                   <div class="col-1"> <a href="https://www.linkedin.com/in/daniel-mwinzi-5045271a1/" class="fa fa-linkedin"></a></div>
+                  </div> 
+             </div> 
+             </div>     
+    </header>
+
+     <!--About-->
+    <section  class="about-section" id="about" id="fade">
+         <div class="container text-center" style="font-family:'Times New Roman', Times, serif;">
+            <div class="row">
+              <div class="col-lg-10 mx-auto">
+              <h2 class="section-title mb-4 text-primary" style="font-family: cursive;" id="fad">About Me</h2>
+              <p class="lead" id="fade">
+               Meet Mwinzi,Mwinzi is a  tech-savvy Computer science major/software Developer.
+         with excellent programming skills.I love exploring new technologies and often amazed
+         by the human progress in the world of technology.
+         I use my programming knowledge and principles to create excellent software products that
+         improve the lives of people around me and also teach beginners how to code
+         I like solving tasks using computer programmes!
+         Apart from programming i enjoy cooking and playing football
+          I strongly belive in technology
+              </p>
+              </div>
+             </div>
+             <h2 class="section-title mb-4 text-primary text-center" style="font-family: cursive;">TALK TO ME</h2>
+              <div class="row justify-content-center">
+                <div class="col"><i class="fa fa-phone fa-2x"></i>O759987665</div>
+                <div class="col"><i class="fa fa-envelope fa-2x"></i>danielmwinzi150@gmail.com</div>
+            </div>             
+         </div>
+        </div>
+       </div>
+         </div>
+    </section>
+
+    <!--timeline-->
+    <section class="timeline" id="timeline" style="margin-top: 20px;">
+      <div class="container text-center" id="education">
+          <i class="fa fa-graduation-cap fa-2x" style="color:skyblue;"></i>
+          <h4 class="d-inline-flex text-primary" style="font-family: cursive;">Education</h4>
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <h4 class="section-title mb-4 text-primary" style="font-family: cursive;">ST.Paul's Univeristy-</h4>
+              <h5 class="section-title mb-4 text-primary" style="font-family: cursive;">Kenya</h5>
+              <h5 class="section-title mb-4 text-primary" style="font-family: cursive;"> Bachelor's Degree in Computer Science</h5>             
+              <p>          
+              Still pursuing a degree in Computer Science already a Diploma holder in related field.
+              Started with a diploma to better my mathematics and physics skills
+              for  good and easy learning of Computer Science</p>
+            </div>
+          </div>
+      </div>
+      <div class="container text-center" id="highschool">
+        <i class="fa fa-book fa-2x" style="color:skyblue;"></i>
+        <h4 class="d-inline-flex text-primary" style="font-family: cursive;">Highschool/Primary</h4>
+        <div class="row">
+          <div class="col-lg-10 mx-auto">             
+            <p>          
+              I have completed my highschool and primary education successfully.
+              During my time in school,I have acquired leadership skills and
+              also developed the desire of furthering the love of computing which helped me understand what i really want. </p>
+          </div>
+        </div>
+    </div>
+    </section>
+
+    <!--skills-->
+    <section id="skills">
+         <div class="container justify-content-center">
+          <h4 class="section-title mb-4 text-primary text-center" style="font-family: cursive;">SKILLS</h4>
+             <h4 class="section-title mb-2 text-left" style="font-family: cursive;">JAVA</h4>
+             <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated"  role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">85%</div>
+            </div>
+            <h4 class="section-title mb-2  text-left" style="font-family: cursive;">PHP</h4>
+             <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated"  role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
+            </div>
+            <h4 class="section-title mb-2  text-left" style="font-family: cursive;">Javascript</h4>
+             <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated"  role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
+            </div>
+            <h4 class="section-title mb-2 text-left" style="font-family: cursive;">Android Development</h4>
+             <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated"  role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">95%</div>
+            </div>
+            <h4 class="section-title mb-2  text-left" style="font-family: cursive;">Web Development</h4>
+             <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated"  role="progressbar" style="width: 95%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">95%</div>
+            </div>
+         </div>
+    </section><br>
+
+    <section id="service">
+       <div class="container-fluid">
+       <div class="row">
+         <div class="col-12 col-sm-12 col-md-6 col-lg-4">     
+          <div class="service-block">
+            <div class="service-icon"> <i class="fa fa-3x fa-mobile text-warning" aria-hidden="true"></i></i></div>
+            <h4 style="font-family: cursive;color:white;">Web Application </h4>
+            <p style="font-family: 'Times New Roman', Times, serif; color: white;font-size: small;">
+                With experience in both front-end and back-end development, 1 can deliver complete, end-to-end solutions for 
+  web and mobile. Whether it's dynamic web interfaces, web services / APIs, systems integration, databases.
+            </p>
+        </div>
+    
+         </div>
+         <div class="col-12 col-sm-12 col-md-6 col-lg-4">     
+          <div class="service-block">
+            <div class="service-icon"> <i class="fa fa-3x fa-mobile text-warning" aria-hidden="true"></i></i></div>
+            <h4 style="font-family: cursive;color:white;">Mobile Development </h4>
+            <p style="font-family: 'Times New Roman', Times, serif; color: white;font-size: small;">
+              We can build an app to a spec, or help you develop an idea from a set of requirements or wireframes through to a fully-working app.
+               We can also help with updating or improving an existing app. 
+            </p>
+        </div>
+    
+         </div>
+         </div>
+       </div>
+
+       </div>
+    </section>
+
+      <!--projects-->
+    <section id="projects" id="fade"> 
+      <div class="container">
+        <h4 class="section-title text-primary text-center" style="font-family: cursive;">PROJECTS</h4>
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
+          <div class="card" style="width: 14rem;">
+            <img src="Screenshot (2).png" class="card-img-top" alt="java">
+            <div class="card-body">
+              <h5 class="card-title">Java Desktop App</h5>
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+          <div class="card" style="width: 14rem;">
+            <video src="scapay.mp4" height="400px" autoplay loop muted></video>
+            <div class="card-body">
+              <h5 class="card-title">Android Application</h5>
+            </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-6 col-lg-4" style="margin-top: 5px;">
+            <div class="card" style="width: 14rem;">
+              <img src="netgraph.png" class="card-img-top" alt="web">
+              <div class="card-body">
+                <h5 class="card-title">Web App</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <!--Contact form-->
+
+    <section id="contact" style="background-color: black;margin-top: 5px;"  >
+       <div class="container"><br>
+        <h4 class="section-title  text-primary text-center" style="font-family: cursive;">GET IN TOUCH</h4><br>
+         <form method="POST" action="script.php">
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+            </div>
+
+            <div class="form-group">
+              <textarea class="form-control" id="message" rows="3" placeholder="Message" name="message"></textarea>
+            </div>
+              </div>
+              </div>
+             </div>
+            <div class="form-group">
+              <input type="submit" value="Submit" class="btn btn-primary" style="margin-left: 10px;">
+            </div>
+            <div id="like" class="container"> 
+              <a class="like" style="color:yellow;"><i class="fa fa-heart"></i>  
+                  Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="0" style="width: 40px;"/>
+          </div> <br>
+         </form>
+         <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top pull-right rounded"  style="display:none;"   role="button"><i class="fa fa-chevron-up"></i></a>
+       </div>
+    </section>
+
+    <a style="display: none;" class="float" href="https://api.whatsapp.com/send?phone=25459987665" target='_blank'><i class= "fa fa-2x fa-whatsapp"></i></a>
+
+    <footer class="footery py-3 bg-primary text-white">
+      <div class="container justify-content-center">
+        <p  style="font-size: small;" class="lead">&copy; Copyright <span> Mwinzi</span></p>
+        <p style="font-size:small;">All rights reserved</p>
+        <p  style="font-size: small;" class="lead">Designed by <span style="font-family: cursive;">Mwinzi</span></p>
+      </div>
+    </footer>  
+<script>
+      $(document).ready(function(){
+	$(window).scroll(function () {
+			if ($(this).scrollTop() > 50) {
+				$('#back-to-top').fadeIn();
+			} else {
+				$('#back-to-top').fadeOut();
+			}
+		});
+		$('#back-to-top').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 600);
+			return false;
+		});   
+    $('#fade').css('display','none');
+    $('#fade').fadeIn(9000);
+    $('#fad').css('display','none');
+    $('#fad').fadeIn(9000);
+    $('#education').css('display','none');
+    $('#education').fadeIn(12000);
+    $('#highschool').css('display','none');
+    $('#highschool').fadeIn(12000);
+    $('#top').css('display','none');
+    $('#top').fadeIn(5000);
+});
+
+$(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 800);
+});
+
+$(document).ready(function(){
+$(window).scroll(function(){
+if($(this).scrollTop()>70){
+  $('.float').show();
+}
+});
+});
+$(function () {
+     $(".like").click(function () {
+         var input = $(this).find('.qty1');
+         input.val(parseInt(input.val())+ 1);
+     });
+});
+</script>
+ </body>
+</html>
